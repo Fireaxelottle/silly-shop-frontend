@@ -26,7 +26,7 @@ const Home = () => {
        <section></section>
        <div className='flex justify-between items-center w-full'>
         <h1 className='text-4xl'>Latest Products</h1>
-        <Link className='text-xl' to="/search">More</Link>
+        <Link className='text-xl link' to="/search">More</Link>
        </div>
        <div className='w-full flex flex-wrap justify-center gap-5'>
         {temData.map((item)=>(
