@@ -1,26 +1,70 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import  ProPic  from "../assects/body-part.png";
+
 
 
 const Navbar = () => {
+
+  let user = {
+    id: "dada",
+    role: "admin",
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const logoutHandler = () => {
+    user._id = "";
+    user.role = "";
+    setIsOpen(false);
+  };
+
+
   return (
     <div
-      className="navbar  w-full bg-slate-200 p-5 sticky top-0">
-      <h1 className="text-3xl hover:cursor-pointer">Silly Shop</h1>
-      <ul className="flex text-xl items-center  gap-5">
+      className="navbar  w-full  p-2">
+      <h2 >Silly Shop</h2>
+      <ul className="flex  items-center  gap-5">
+     
         <li>
-          <Link to="/">Home</Link>
-        </li>
+          <Link to="/"><i class="fa-solid fa-house"></i></Link>
+        </li>   
         <li>
-          <Link to="/cart"><i class="fa-solid fa-cart-flatbed text-lg"></i></Link>
-        </li>
+          <Link to="/cart"><i class="fa-solid fa-basket-shopping"></i></Link>
+        </li>        
         <li>
           <Link to="/search"><i class="fa-solid fa-magnifying-glass text-lg"></i></Link>
         </li>
-        <li className="border border-black p-1 rounded-full profile ">
-          <Link to="/"><img src={ProPic} alt="" className="w-6 h-6 rounded-full " /></Link>
-        </li>
+        <li className="profile ">
+        {user.id ? (
+        <>
+          <button onClick={() => setIsOpen(!isOpen)}>
+          <i class="fa-regular fa-circle-user"></i>
+          </button>
+          <dialog open={isOpen}>
+            <div>
+              {user.role === "admin" && (
+                <Link className="link" to="/admin/dashboard" onClick={() => setIsOpen(false)}>
+                  Admin
+                </Link>
+              )}
+
+              <Link className="link" to="/orders" onClick={() => setIsOpen(false)}>
+                Orders
+              </Link>
+              <button onClick={logoutHandler}>
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              </button>
+            </div>
+          </dialog>
+        </>
+      ) : (
+        <Link to="/login" onClick={() => setIsOpen(false)}>
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </Link>
+      )}
+        </li>  
+        
+        
       </ul>
     </div>
   );

@@ -63,10 +63,11 @@ const Search = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      < ProductCard id={"adsasd"} image="https://m.media-amazon.com/images/I/81Fm0tRFdHL.__AC_SY445_SX342_QL70_FMwebp_.jpg" name="MacBook" price={123} stock={123} handler={addToCart} />
 
-
-      
+      <div className="products">
+        < ProductCard id={"adsasd"} image="https://m.media-amazon.com/images/I/81Fm0tRFdHL.__AC_SY445_SX342_QL70_FMwebp_.jpg" name="MacBook" price={123} stock={123} handler={addToCart} />
+      </div>
+ 
    
     <article>
       <button
