@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { animated , useSpring } from "react-spring";
 
 
 
@@ -10,6 +11,14 @@ const Navbar = () => {
     role: "admin",
   };
 
+  const spring = useSpring({
+    from: { y: -10 },
+    to: { y: 1 },
+    config: { duration: 200 },
+  });
+
+  
+
   const [isOpen, setIsOpen] = useState(false);
 
   const logoutHandler = () => {
@@ -18,10 +27,14 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+  
+
 
   return (
-    <div
-      className="navbar  w-full  p-2">
+    <animated.div
+      className="navbar  w-full  p-2"
+      
+    >
       <h2 >Silly Shop</h2>
       <ul className="flex  items-center  gap-5">
      
@@ -66,7 +79,7 @@ const Navbar = () => {
         
         
       </ul>
-    </div>
+    </animated.div>
   );
 };
 

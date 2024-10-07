@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
+import { useSpring , animated } from 'react-spring'
 
 const Search = () => {
 
@@ -14,6 +15,12 @@ const Search = () => {
     },
     
   ]
+
+  const spring = useSpring({
+    from: { opacity: 0, y: -10 },
+    to: {opacity: 1, y: 0 },
+    config: { duration: 1000 },
+ });   
 
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
@@ -31,7 +38,7 @@ const Search = () => {
 
 
   return (
-    <div className="product-search-page">
+    <animated.div className="product-search-page" style={{...spring}}>
     <aside>
       <h2>Filters</h2>
       <div>
@@ -102,7 +109,7 @@ const Search = () => {
   
 
     </main >
-  </div >
+  </animated.div >
   )
 }
 

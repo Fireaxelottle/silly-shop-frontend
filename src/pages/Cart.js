@@ -1,6 +1,7 @@
 import React , {useState} from "react";
 import { Link } from "react-router-dom";
 import CartItem from "../components/CartItem";
+import { useSpring , animated } from "react-spring";
 
 const Cart = () => {
   const cart = [
@@ -27,6 +28,13 @@ const Cart = () => {
     },
   ];
 
+  const spring = useSpring({
+    from: { opacity: 0, y: -10 },
+    to: {opacity: 1, y: 0 },
+    config: { duration: 1000 },
+ })   
+    
+
   const subTotal = 4000;
   const tax = Math.round(subTotal * 0.18);
   const shippingCharges = 760;
@@ -37,7 +45,7 @@ const Cart = () => {
   const [isValidCouponCode, setisValidCouponCode] = useState(false);
 
   return (
-    <div className="cart py-20 px-24 text-black">
+    <animated.div className="cart py-20 px-24 text-black" style={{...spring}}>
 
       <main className="flex flex-col gap-10 w-[80%]">
         {cart.length > 0 ? (
@@ -79,7 +87,7 @@ const Cart = () => {
 
         {cart.length > 0 && <Link to="/shipping" className="link w-[80%]">Checkout</Link>}
       </aside>
-    </div>
+    </animated.div>
   );
 };
 

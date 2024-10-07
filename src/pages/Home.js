@@ -1,6 +1,7 @@
 
 import ProductCard from '../components/ProductCard'
 import {Link} from 'react-router-dom'
+import { animated , useSpring } from 'react-spring'
 
 const Home = () => {
     const temData = [
@@ -10,12 +11,19 @@ const Home = () => {
            name:"MacBook",
            price:123 ,
            stock:123,
-        },
-        
-           
-    ]
+        },  ]
+
+        const spring = useSpring({
+          from: { opacity: 0, y: -10 },
+          to: {opacity: 1, y: 1 },
+          config: { duration: 1000 },
+       })   
+          
+
+
+
   return (
-    <div className='home  gap-5  '>
+    <animated.div className='home  gap-5  ' style={{...spring}}>
        <section></section>
        <div className='flex justify-between items-center w-full'>
         <h1 className='text-4xl'>Latest Products</h1>
@@ -28,7 +36,7 @@ const Home = () => {
        </div>
        
      
-    </div>
+    </animated.div>
   )
 }
 
