@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ProductCard from '../components/ProductCard'
 import {Link} from 'react-router-dom'
 
@@ -6,36 +6,13 @@ const Home = () => {
     const temData = [
         {
           id:1,
-          name:"Product 1"
+          image:"https://m.media-amazon.com/images/I/81Fm0tRFdHL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
+           name:"MacBook",
+           price:123 ,
+           stock:123,
         },
-        {
-          id:2,
-          name:"Product 2"
-        },
-        {
-          id:3,
-          name:"Product 3"
-        },
-        {
-          id:4,
-          name:"Product 4"
-        },
-        {
-          id:5,
-          name:"Product 4"
-        },
-        {
-          id:6,
-          name:"Product 4"
-        },
-        {
-          id:7,
-          name:"Product 4"
-        },
-        {
-          id:8,
-          name:"Product 4"
-        },
+        
+           
     ]
   return (
     <div className='home  gap-5  '>

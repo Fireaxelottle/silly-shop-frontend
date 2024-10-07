@@ -26,19 +26,19 @@ const Navbar = () => {
       <ul className="flex  items-center  gap-5">
      
         <li>
-          <Link to="/"><i class="fa-solid fa-house"></i></Link>
+          <Link to="/"><i className="fa-solid fa-house"></i></Link>
         </li>   
         <li>
-          <Link to="/cart"><i class="fa-solid fa-basket-shopping"></i></Link>
+          <Link to="/cart"><i className="fa-solid fa-basket-shopping"></i></Link>
         </li>        
         <li>
-          <Link to="/search"><i class="fa-solid fa-magnifying-glass text-lg"></i></Link>
+          <Link to="/search"><i className="fa-solid fa-magnifying-glass text-lg"></i></Link>
         </li>
         <li className="profile ">
         {user.id ? (
         <>
           <button onClick={() => setIsOpen(!isOpen)}>
-          <i class="fa-regular fa-circle-user"></i>
+          <i className="fa-regular fa-circle-user"></i>
           </button>
           <dialog open={isOpen}>
             <div>
@@ -52,14 +52,14 @@ const Navbar = () => {
                 Orders
               </Link>
               <button onClick={logoutHandler}>
-              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              <i className="fa-solid fa-arrow-right-from-bracket"></i>
               </button>
             </div>
           </dialog>
         </>
       ) : (
         <Link to="/login" onClick={() => setIsOpen(false)}>
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <i className="fa-solid fa-arrow-right-to-bracket"></i>
         </Link>
       )}
         </li>  

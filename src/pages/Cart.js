@@ -73,7 +73,7 @@ const Cart = () => {
             </span>
           ) : (
             <span className="text-red-500 text-base">
-              Invalid coupon code <i class="fa-regular fa-circle-xmark"></i>
+              Invalid coupon code <i className="fa-regular fa-circle-xmark"></i>
             </span>
           ))}
 

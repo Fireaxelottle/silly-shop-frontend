@@ -4,6 +4,17 @@ import ProductCard from '../components/ProductCard'
 
 const Search = () => {
 
+  const temData = [
+    {
+      id:2,
+      image:"https://m.media-amazon.com/images/I/81Fm0tRFdHL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
+       name:"MacBook",
+       price:123 ,
+       stock:123,
+    },
+    
+  ]
+
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
   const [maxPrice, setMaxPrice] = useState(100000);
@@ -65,7 +76,9 @@ const Search = () => {
       />
 
       <div className="products">
-        < ProductCard id={"adsasd"} image="https://m.media-amazon.com/images/I/81Fm0tRFdHL.__AC_SY445_SX342_QL70_FMwebp_.jpg" name="MacBook" price={123} stock={123} handler={addToCart} />
+        {temData.map((item) => (
+          < ProductCard item={item} id={item.id} />
+        ))}   
       </div>
  
    

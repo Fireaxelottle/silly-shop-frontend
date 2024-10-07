@@ -18,7 +18,7 @@ const CartItem = ({ item }) => {
         <p>{quantity}</p>
         <button className="hover:bg-black hover:text-white w-8 h-8 rounded-md text-xl">+</button>
       </div>
-      <button className=" hover:text-red-500  text-xl"><i class="fa-solid fa-trash"></i></button>
+      <button className=" hover:text-red-500  text-xl"><i className="fa-solid fa-trash"></i></button>
     </div>
   );
 };

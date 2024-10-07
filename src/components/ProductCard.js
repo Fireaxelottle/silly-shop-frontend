@@ -1,11 +1,24 @@
 import React from 'react'
 
-const ProductCard = () => {
+const ProductCard = ({ item }) => {
+  const { id, name, price, image } = item
+
+  const handler = () => {
+    console.log(id);
+  };
   return (
-    <div className='w-1/6 product-card hover:cursor-pointer hover:scale-105 hover:shadow-xl   flex flex-col  items-center  relative'>
-      <img className='w-full h-[80%] ' src="https://picsum.photos/200/300" alt="Electronics item" />  
-      <h1 className='text-2xl my-auto'>hjghj</h1>   
-    </div>
+     <div className='product-card'>
+        <img src={image} alt={name} />
+        <p>{name}</p>
+        <span>${price}</span>
+  
+        <div>
+          <button onClick={handler}>
+          <i className="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+    
   )
 }
 

@@ -16,7 +16,7 @@ const Shipping = () => {
   }
   return (
     <div className='p-28 shipping '>
-      <Link to="/cart" className='link text-white rounded-md hover:scale-75 hover:shadow-xl  p-4' ><i class="fa-solid fa-arrow-left"></i></Link>
+      <Link to="/cart" className='link text-white rounded-md hover:scale-75 hover:shadow-xl  p-4' ><i className="fa-solid fa-arrow-left"></i></Link>
       
       <form className='flex justify-center items-center flex-col gap-8 mx-auto'>
         <h1 className='text-4xl'>Shipping</h1>

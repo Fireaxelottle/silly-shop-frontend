@@ -28,7 +28,7 @@ a {
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 42px;
 }
 
 h2 {
@@ -59,6 +59,11 @@ input {
   align-items: center;
   background-color: none;
   flex-wrap: wrap;
+}
+
+.navbar h2 {
+  margin: 0 20px;
+  font-weight: bold;
 }
 
 .navbar ul {
@@ -122,6 +127,66 @@ input {
 .home div .link:hover {
   scale: 1.2;
   color: #3498db;
+}
+
+.product-card {
+  width: 14.75rem;
+  height: 20.75rem;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  display: flex ;
+  position: relative;
+  background-color: white;
+}
+
+.product-card div:hover {
+  opacity: 1;
+}
+
+.product-card img {
+  width: 16.75rem - 3rem; 
+  object-fit:contain;
+  margin: 1rem;
+}
+
+.product-card span {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.product-card div {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #0000006b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+.product-card div button { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  border: none;
+  background-color: #3498db;
+  cursor: pointer;
+  color: #333333;
+  font-size: 1.1rem;
+  transition: all .3s;
+  color: #ffffff; 
+}
+
+.product-card div button:hover {
+        rotate: 20deg;  
 }
 
 /* Cart */
@@ -223,8 +288,8 @@ input {
 /*/* Search aside */
 
 .product-search-page aside {
-  width: 30%;
-  height: 70vh;
+  width: 25%;
+  height: 75vh;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 30px;
   gap: 20px;
@@ -284,10 +349,11 @@ input {
 
 
 .product-search-page main article {
-  margin: 15px auto;
+  margin: 50px auto;
   display: flex;
   align-items: center;
   gap: 10px;
+
 }
 
 .product-search-page main article button {
@@ -298,6 +364,66 @@ border-radius: 5px;
 cursor: pointer;
 }
 
-.product-card {
- box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
-}  
+/* Lodder */
+
+.loader {
+  color: #333333;
+  font-size: 10px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: mulShdSpin 1.3s infinite linear;
+  transform: translateZ(0);
+}
+
+@keyframes mulShdSpin {
+  0%,
+  100% {
+    box-shadow: 0 -3em 0 0.2em, 
+    2em -2em 0 0em, 3em 0 0 -1em, 
+    2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 0;
+  }
+  12.5% {
+    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 
+    3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  25% {
+    box-shadow: 0 -3em 0 -0.5em, 
+    2em -2em 0 0, 3em 0 0 0.2em, 
+    2em 2em 0 0, 0 3em 0 -1em, 
+    -2em 2em 0 -1em, -3em 0 0 -1em, 
+    -2em -2em 0 -1em;
+  }
+  37.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, 
+     -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  50% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, 
+     -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+  }
+  62.5% {
+    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em,
+     3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, 
+     -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+  }
+  75% {
+    box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 
+    3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 
+    3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, 
+    -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+  }
+}
+  
