@@ -6,10 +6,10 @@ import { animated , useSpring } from "react-spring";
 
 const Navbar = () => {
 
-  let user = {
-    id: "dada",
+  const [user, setUser] = useState({
+    id: "glue",
     role: "admin",
-  };
+  });
 
   const spring = useSpring({
     from: { y: -10 },
@@ -21,9 +21,13 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log(user);
+
   const logoutHandler = () => {
-    user._id = "";
-    user.role = "";
+    setUser({
+      id: "",
+      role: "",
+    });
     setIsOpen(false);
   };
 
@@ -61,7 +65,7 @@ const Navbar = () => {
                 </Link>
               )}
 
-              <Link className="link" to="/orders" onClick={() => setIsOpen(false)}>
+              <Link className="link" to="/order" onClick={() => setIsOpen(false)}>
                 Orders
               </Link>
               <button onClick={logoutHandler}>

@@ -15,9 +15,9 @@ const Home = () => {
 
         const spring = useSpring({
           from: { opacity: 0, y: -10 },
-          to: {opacity: 1, y: 1 },
+          to: {opacity: 1, y: 0 },
           config: { duration: 1000 },
-       })   
+       });   
           
 
 
