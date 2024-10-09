@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import "./App.css";
 
+
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 
@@ -13,6 +14,7 @@ const Search = lazy(() => import("./pages/Search"));
 const Login = lazy(() => import("./pages/Login"));
 const Signup = lazy(() => import("./pages/Signup"));
 const Order = lazy(() => import("./pages/Order"));
+const DashBoard = lazy(() => import("./pages/admin/DashBoard"));
 
 
 
@@ -29,6 +31,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/order" element={<Order />} />
+            <Route path="/admin/dashboard" element={<DashBoard />} />
           </Routes>
       </Suspense>
     </Router>

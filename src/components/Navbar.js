@@ -21,7 +21,6 @@ const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(user);
 
   const logoutHandler = () => {
     setUser({

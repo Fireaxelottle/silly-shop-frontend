@@ -5,13 +5,26 @@ import {
     useSortBy,
     useTable,
     TableOptions,
+    ColumnFilter,
   } from "react-table";
+
 import { Link } from 'react-router-dom';  
 
 
-const Table = ({rows, columns, heading , showPagination}) => {
+const Table = ({rows, columns, heading , showPagination, CCN}) => {
 
-    const data = React.memo(() => rows, [rows]);
+    const data = React.useMemo(() => rows, [rows]);
+    const column = React.useMemo(() => columns, [columns]);
+
+    const options = {
+      columns,
+      data,
+      initialState: { pageIndex: 6},
+
+    }
+
+
+    console.log(column)
 
 
 
@@ -27,32 +40,64 @@ const Table = ({rows, columns, heading , showPagination}) => {
         previousPage,
         canNextPage,
         canPreviousPage,
-      } = useTable( columns, data , useSortBy, usePagination);
+      } = useTable(options , useSortBy, usePagination);
 
-  return (
-    <div className='table'>
-      <h1>{heading}</h1>
-
-      <table className="table" >
-          <thead>
-            jkhj
-          </thead>
-          <tbody>dsadasd</tbody>
-        </table>
-
-        {showPagination && (
-          <div className="table-pagination">
-            <button disabled={!canPreviousPage} onClick={previousPage}>
-              Prev
-            </button>
-            <span>{`${pageIndex + 1} of ${pageCount}`}</span>
-            <button disabled={!canNextPage} onClick={nextPage}>
-              Next
-            </button>
-          </div>
-        )}
-    </div>
-  )
+   
+    
+      return (
+        <div className={CCN}>
+          <h2 className="heading">{heading}</h2>
+  
+          <table className="table" {...getTableProps()}>
+            <thead>
+              {headerGroups.map((headerGroup) => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column) => (
+                    <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                      {column.render("Header")}
+                      {column.isSorted && (
+                        <span>
+                          {" "}
+                          {column.isSortedDesc ? (
+                            <i className="fa-solid fa-arrow-down"></i>
+                          ) : (
+                            <i className="fa-solid fa-arrow-up"></i>
+                          )}
+                        </span>
+                      )}
+                    </th>
+                  ))}
+                </tr>
+              ))}
+            </thead>
+            <tbody {...getTableBodyProps()}>
+              {page.map((row) => {
+                prepareRow(row);
+  
+                return (
+                  <tr {...row.getRowProps()}>
+                    {row.cells.map((cell) => (
+                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+  
+          {showPagination && (
+            <div className="table-pagination">
+              <button disabled={!canPreviousPage} onClick={previousPage}>
+                Prev
+              </button>
+              <span>{`${pageIndex + 1} of ${pageCount}`}</span>
+              <button disabled={!canNextPage} onClick={nextPage}>
+                Next
+              </button>
+            </div>
+          )}
+        </div>
+      );
 }
 
 export default Table
