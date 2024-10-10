@@ -6,7 +6,7 @@ const Order = () => {
 
     const columns = [{
             Header: "ID",
-            accessor: "_id",
+            accessor: "id",
           },
           {
             Header: "Quantity",
@@ -32,29 +32,24 @@ const Order = () => {
         ]; 
     const [rows] = useState([
         {
-            _id: "6666asdsad8cafasfe",
+            id: "6666asdsad8cafasfe",
             amount: 1000,
             quantity: 1,
             discount: 469,
             status: <span className="red">Pending</span>,
             action: <Link to="/order/6666asdsad8cafasfe">View</Link>,
         },
-        {
-          _id: "6666asdsad8cafasfe",
-          amount: 1000,
-          quantity: 1,
-          discount: 469,
-          status: <span className="red">Pending</span>,
-          action: <Link to="/order/6666asdsad8cafasfe">View</Link>,
-      }
       ]);
     const showPagination = false;  
+    const data = React.useMemo(() => rows, [rows]);
   return (
     <div className="order">
       <h1>My Orders</h1>
-      <Table columns={columns} rows={rows} heading="Orders" showPagination={showPagination} CCN={"order-table"}/>
+    {  rows && rows.length >  0 ?  <Table columns={columns} data={data} heading="Orders" showPagination={showPagination} CCN={"order-table"}/> : <p>No Orders</p> }
+      
     </div>
   )
-}
 
+  
+}
 export default Order

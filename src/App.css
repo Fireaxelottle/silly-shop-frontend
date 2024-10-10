@@ -527,28 +527,50 @@ cursor: pointer;
 }
 
 .table {
- margin: 1.5rem 0;
  width: 100%;
+ 
 }
 
 
 .table thead  tr {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   font-size: 18px;
   font-weight: 200;
   color: gray;
 }
 
-/*/*//*//* Admin *//*//*/*/
+
+.table tbody  tr {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+
+.table td,th {
+  padding: 10px;
+  text-align: start; 
+}
+
+
+.table img {
+  width: 80px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.table tbody td a {
+    text-decoration: none;
+    background-color: rgba(44, 104, 255, 0.455);
+    color: rgb(44, 104, 255);
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
+}
+
+
+/*/*//*//* Admin *//*//*/
 .admin-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   width: 100vw;
-  background-color: #f0f0f0;
 }
 
 #sidebar {
@@ -601,3 +623,34 @@ cursor: pointer;
   width: 1.2rem;
 }
 
+/* Products */
+
+.admin-products {
+  display: flex;
+  gap: 30px;
+}
+
+.admin-products main {
+  width: 80%;
+  margin-top: 4rem;
+}
+
+.admin-products main div {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem ;
+}
+
+.admin-products main div button {
+  padding: 0 12px;
+  border-radius: 50px;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+.admin-products main div button:hover {
+  scale: 1.1;
+  opacity: 0.8;
+}

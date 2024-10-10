@@ -6,14 +6,14 @@ import {
     useTable,
     TableOptions,
     ColumnFilter,
+
   } from "react-table";
 
 import { Link } from 'react-router-dom';  
 
 
-const Table = ({rows, columns, heading , showPagination, CCN}) => {
+const Table = ({data, columns, showPagination, CCN}) => {
 
-    const data = React.useMemo(() => rows, [rows]);
     const column = React.useMemo(() => columns, [columns]);
 
     const options = {
@@ -32,6 +32,7 @@ const Table = ({rows, columns, heading , showPagination, CCN}) => {
         getTableProps,
         getTableBodyProps,
         headerGroups,
+        rows,
         page,
         prepareRow,
         nextPage,
@@ -46,7 +47,6 @@ const Table = ({rows, columns, heading , showPagination, CCN}) => {
     
       return (
         <div className={CCN}>
-          <h2 className="heading">{heading}</h2>
   
           <table className="table" {...getTableProps()}>
             <thead>
@@ -71,14 +71,15 @@ const Table = ({rows, columns, heading , showPagination, CCN}) => {
               ))}
             </thead>
             <tbody {...getTableBodyProps()}>
-              {page.map((row) => {
+              {rows.map((row) => {
                 prepareRow(row);
-  
                 return (
                   <tr {...row.getRowProps()}>
-                    {row.cells.map((cell) => (
-                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
-                    ))}
+                    {row.cells.map((cell) => {
+                      return (
+                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                      );
+                    })}
                   </tr>
                 );
               })}

@@ -45,7 +45,6 @@ const AdminSidebar = () => {
             : {}
         }
       >
-        <h3>Logo.</h3>
         <DivOne location={location} />
         <DivTwo location={location} />
         <DivThree location={location} />
@@ -62,7 +61,7 @@ const AdminSidebar = () => {
 
 const DivOne = ({location }) =>(
   <div className="board">
-    <h4>Dashboard</h4>
+    <h4>Managment</h4>
     <ul>
       <Li
         url="/admin/dashboard"
