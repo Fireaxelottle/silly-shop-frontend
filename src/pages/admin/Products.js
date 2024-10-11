@@ -54,7 +54,7 @@ const Products = () => {
   const showPagination = false;  
 
   return (
-    <div className="admin-products ">
+    <div className="admin-container ">
       <AdminSidebar />
       <main>
         <div>
@@ -63,7 +63,7 @@ const Products = () => {
             <i className="fa-solid fa-plus"></i>
           </button>
         </div>
-        {  rows && rows.length >  0 ?  <Table columns={columns} data={data}  showPagination={showPagination} CCN={"admin-product-table"}/> : <p>No Orders</p> }
+        {  rows && rows.length >  0 ?  <Table columns={columns} data={data}  showPagination={showPagination} CCN={"admin-product-table"}/> : <p>No Products</p> }
       </main>
     </div>
   );

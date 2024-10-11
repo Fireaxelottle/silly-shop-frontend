@@ -528,7 +528,6 @@ cursor: pointer;
 
 .table {
  width: 100%;
- 
 }
 
 
@@ -568,10 +567,6 @@ cursor: pointer;
 
 
 /*/*//*//* Admin *//*//*/
-.admin-container {
-  display: flex;
-  width: 100vw;
-}
 
 #sidebar {
   width: 20%;
@@ -625,24 +620,34 @@ cursor: pointer;
 
 /* Products */
 
-.admin-products {
+.admin-container {
   display: flex;
   gap: 30px;
 }
 
-.admin-products main {
+.admin-container main {
   width: 80%;
   margin-top: 4rem;
 }
 
-.admin-products main div {
+.admin-container main .admin-product-table img {
+  width: 6.2rem;
+  height: 4rem;
+}
+
+.admin-container main .admin-customer-table img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.admin-container main div {
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem ;
 }
 
-.admin-products main div button {
-  padding: 0 12px;
+.admin-container main div button {
+  padding: 8px 14px;
   border-radius: 50px;
   background-color: #3498db;
   color: white;
@@ -650,7 +655,12 @@ cursor: pointer;
   font-weight: 600;
 }
 
-.admin-products main div button:hover {
+.admin-container main div .trash {
+  background-color: white;
+  color: red;
+}
+
+.admin-container main div button:hover {
   scale: 1.1;
-  opacity: 0.8;
+  opacity: 0.5;
 }

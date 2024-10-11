@@ -23,7 +23,7 @@ const Home = () => {
 
 
   return (
-    <animated.div className='home  gap-5  ' style={{...spring}}>
+    <animated.div className='home  gap-5  '>
        <section></section>
        <div className='flex justify-between items-center w-full'>
         <h1 className='text-4xl'>Latest Products</h1>
