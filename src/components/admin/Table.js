@@ -12,7 +12,7 @@ import {
 import { Link } from 'react-router-dom';  
 
 
-const Table = ({data, columns, showPagination, CCN}) => {
+const Table = ({data, columns, showPagination, CCN , heading}) => {
 
     const column = React.useMemo(() => columns, [columns]);
 
@@ -47,6 +47,7 @@ const Table = ({data, columns, showPagination, CCN}) => {
     
       return (
         <div className={CCN}>
+          <h3>{heading}</h3>
   
           <table className="table" {...getTableProps()}>
             <thead>

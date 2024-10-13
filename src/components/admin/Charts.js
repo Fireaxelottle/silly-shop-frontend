@@ -30,9 +30,8 @@ import {
     Filler
   );
 
-const labels = ["January", "February", "March", "April", "May", "June", "July"];
 
-const  BarChart = ({ data_1, data_2 , title_1 , title_2 , bgColor_1 , bgColor_2 , horizontal}) => {
+export const  BarChart = ({ data_1, data_2 , title_1 , title_2 , bgColor_1 , bgColor_2 , horizontal , labels}) => {
 
 
     const options = {
@@ -88,4 +87,119 @@ const  BarChart = ({ data_1, data_2 , title_1 , title_2 , bgColor_1 , bgColor_2 
 };
 
 
-export default BarChart;
+export const DoughnutChart = ({
+  labels,
+  data,
+  backgroundColor,
+  cutout,
+  legends = true,
+  offset,
+}) => {
+  const doughnutData= {
+    labels,
+    datasets: [
+      {
+        data,
+        backgroundColor,
+        borderWidth: 0,
+        offset,
+      },
+    ],
+  };
+
+  const doughnutOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: legends,
+        position: "bottom",
+        labels: {
+          padding: 40,
+        },
+      },
+    },
+    cutout,
+  };
+
+  return <Doughnut data={doughnutData} options={doughnutOptions} />;
+};
+
+
+export const PieChart = ({
+  labels,
+  data,
+  backgroundColor,
+  offset,
+}) => {
+  const pieChartData = {
+    labels,
+    datasets: [
+      {
+        data,
+        backgroundColor,
+        borderWidth: 1,
+        offset,
+      },
+    ],
+  };
+
+  const pieChartOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
+  return <Pie data={pieChartData} options={pieChartOptions} />;
+};
+
+export const LineChart = ({
+  data,
+  label,
+  backgroundColor,
+  borderColor,
+  labels,
+}) => {
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+      },
+      title: {
+        display: false,
+      },
+    },
+
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: {
+          display: false,
+        },
+      },
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+    },
+  };
+
+  const lineChartData = {
+    labels,
+    datasets: [
+      {
+        fill: true,
+        label,
+        data,
+        backgroundColor,
+        borderColor,
+      },
+    ],
+  };
+
+  return <Line options={options} data={lineChartData} />;
+};

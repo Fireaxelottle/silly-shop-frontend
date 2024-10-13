@@ -581,7 +581,6 @@ cursor: pointer;
   flex-direction: column;
   padding: 20px;
   gap: 20px;
- 
 }
 
 #sidebar h3 {
@@ -629,11 +628,12 @@ cursor: pointer;
 .admin-container {
   display: flex;
   gap: 30px;
+
 }
 
 .admin-container main {
   width: 80%;
-  margin-top: 4rem;
+  margin: 0 4rem 0 0;
 }
 
 .admin-container main .admin-product-table img {
@@ -672,12 +672,13 @@ cursor: pointer;
 }
 
 .admin-container main .search-bar {
+  margin: 0 auto;
+  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   border-bottom: 1px solid gray;
-  border-radius: 5px;
 }
 
 .admin-container main .search-bar input {
@@ -690,27 +691,33 @@ cursor: pointer;
 }
 
 
-.widget-container {
+/* Widgets */
+
+
+
+.widget-items {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 5rem;
   width: 100%;
-  padding: 2rem 2rem 2rem 0;
+ 
 }
 
 .widget {
   display: flex;
   align-items: center;
+  flex-direction: column;
   gap: 10px;
-  width: 20%;
-  padding: 10px;
-  box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+  width: 30% ;
+  
 }
 
 .widget-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5px;
 }
 
@@ -718,29 +725,297 @@ cursor: pointer;
   font-weight: 800;
 }
 
-.widget-circle {
-  position: relative;
-  border-radius: 50%;
-  flex: none;
-  background-color: aquamarine;
-  height: 3rem;
-  width: 3rem;
-  display: grid;
-  place-items: center;
-}
 
-.widget-circle::before {
-  content: "";
-  position: absolute;
-  height: 3rem;
-  background-color: white;
-  border-radius: 100%;
-}
 
-.widget-circle span {
-  position: relative;
-}
+
+
+
+
+
+/* Graphs */
 
 .graph-container {
   display: flex;
+  gap: 2rem;
+  width: 100%;
+  padding: 0 2rem;
+  margin: 20vh 0;
+}
+
+.graph-container .revenue-graph {
+  width: 60%;
+  height: 25rem;
+  padding: 2rem;
+  box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+  align-items: center;
+}
+
+
+
+.graph-container .revenue-graph , .dashboard-categories {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.graph-container .dashboard-categories {
+  width: 100%;
+  max-width: 16rem;
+  align-items: center;
+  padding: 2rem;
+  box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+} 
+
+.graph-container .dashboard-categories .categories{
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-container .dashboard-categories div .category-item{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  font-size: 13px;
+}
+
+.graph-container .dashboard-categories div .category-item span {
+  font-weight: 600;
+}
+
+.graph-container .dashboard-categories div .category-item .progress {
+  margin-left: auto;
+  width: 9rem;
+  height: 1rem;
+  background-color: rgb(217, 217, 217);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0;
+  overflow: hidden;
+}
+
+.graph-container .dashboard-categories div .category-item .progress div {
+  height: fit-content;
+ 
+}
+
+/* transaction container */
+
+.transaction-container {
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.transaction-container .gender-chart {
+  width: 37%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+
+
+.transaction-container .order-table {
+  width: 50%;
+  height: 100%;
+ 
+
+}
+
+/* barchart */
+
+.chart-container {
+  width: 100%;
+  padding: 4rem;
+}
+
+.chart-container h1 {
+  font-weight: 800;
+}
+
+.chart-container section{
+  width: 90%;
+  padding: 2rem;
+  box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
+  margin: 2rem auto;
+  gap: 1rem;
+
+}
+
+.chart-container section div {
+  max-width: 25rem;
+  margin: auto;
+  margin-top: 6rem;
+  margin-bottom: -1rem;
+}
+
+
+/* apps */
+
+.dashboard-app-container {
+  width: 100%;
+  padding: 0 2rem;
+ 
+}
+
+.dashboard-app-container h2 {
+  font-weight: 800;
+}
+
+.dashboard-app-container section {
+  width: 90%;
+  padding: 2rem;
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-app-container section .stopwatch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.dashboard-app-container section .stopwatch div {
+  display: flex;
+  gap: 4rem;
+} 
+
+.dashboard-app-container section .stopwatch div button {
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  background-color: blue;
+} 
+
+.dashboard-app-container section .stopwatch div button:last-child {
+  background-color: red;
+}
+
+
+/* cupon */
+
+.coupon-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-width: 30rem;
+  width: 100%;
+  gap: 1rem;
+
+ 
+}
+
+
+
+
+.coupon-form  input {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.359);
+  outline: none;
+  border-radius: 5px;
+}
+
+.coupon-form  fieldset {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.359);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  grid-column: 1/3;
+
+ 
+}
+
+.coupon-form  fieldset  span {
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-inline-start: 0.25rem;
+  margin-inline-end: 1rem;
+} 
+
+.coupon-form   button {
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin: 2rem 0;
+  border-radius: 10px;
+  grid-column: 1/3;
+  background-color: rgb(0, 98, 255);
+}
+
+.dashboard-app-container code {
+  position: relative;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.dashboard-app-container code:hover span {
+  opacity: 1;
+}
+
+.dashboard-app-container code span {
+  opacity: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-radius: 5px;
+  background-color: rgb(15, 15, 15);
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  justify-content: center;
+  transition: 0.5s;
+  display: flex;
+}
+
+/* Toss */
+
+.tosscoin {
+  margin: 2rem;
+  width: 15rem;
+  height: 15rem;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+  }
+
+
+.tosscoin   div {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: grid;
+  place-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  backface-visibility: hidden;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.521));
+}
+
+.tosscoin div:first-of-type {
+  background-image: url("./assects/images/heads.png");
+}
+
+.tosscoin div:last-of-type {
+  background-image: url("./assects/images/tails.png");
+  transform: rotateY(-180deg);
 }

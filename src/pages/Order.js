@@ -45,7 +45,7 @@ const Order = () => {
   return (
     <div className="order">
       <h1>My Orders</h1>
-    {  rows && rows.length >  0 ?  <Table columns={columns} data={data} heading="Orders" showPagination={showPagination} CCN={"order-table"}/> : <p>No Orders</p> }
+    {  rows && rows.length >  0 ?  <Table columns={columns} data={data} heading={""} showPagination={showPagination} CCN={"order-table"}/> : <p>No Orders</p> }
       
     </div>
   )
