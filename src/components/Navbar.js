@@ -38,7 +38,10 @@ const Navbar = () => {
       className="navbar  w-full  p-2"
       
     >
+      <div className="flex items-center ">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmI_CoUIsPe6X6BLHh18CAow1Zsik74OwieQ&s" alt="" className="logo"/>
       <h2 >Silly Shop</h2>
+      </div>
       <ul className="flex  items-center  gap-5">
      
         <li>

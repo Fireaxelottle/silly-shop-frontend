@@ -64,6 +64,13 @@ const DashBoard = () => {
             color="rgb(0 198 202)"
             heading="Users"
           />
+
+          <WidgetItem
+            percent={80}
+            value={23000}
+            color="rgb(255 196 0)"
+            heading="Transactions"
+          />
     
           <WidgetItem
             percent={30}
@@ -143,16 +150,7 @@ const WidgetItem = ({heading , value , percent , color ,amount})=> (<article cla
         <p className='red'> <i className="fa-solid fa-caret-down"></i> {percent}% </p>
     }
   </div>
-
-    <DoughnutChart 
-   backgroundColor={[color ]}
-   cutout={90}
-   data={[value]}
-   labels={[heading ]} 
-  />
- 
-  
-
+   
 </article>);
 
 const CategoryItem = ({ color, value, heading }) => (

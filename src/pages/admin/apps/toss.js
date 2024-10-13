@@ -13,7 +13,7 @@ const Toss = () => {
     <div className="admin-container">
       <AdminSidebar />
       <main className="dashboard-app-container">
-        <h1>Toss</h1>
+        <h2>Toss</h2>
         <section>
           <article
             className="tosscoin"
