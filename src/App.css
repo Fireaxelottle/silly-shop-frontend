@@ -84,6 +84,7 @@ select {
 .navbar li {
   cursor: pointer;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 .navbar i:hover {
   scale: 1.3;

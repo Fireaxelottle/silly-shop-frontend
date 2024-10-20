@@ -1,39 +1,24 @@
 import React , {useState} from "react";
 import { Link } from "react-router-dom";
+
+import { useSelector , useDispatch } from "react-redux";
+
+
+
 import CartItem from "../components/CartItem";
 import { useSpring , animated } from "react-spring";
 
+
 const Cart = () => {
-  const cart = [
-    {
-      productId: "1",
-      name: "Puma Shoes",
-      price: 4000,
-      quantity: 2,
-      image: "https://m.media-amazon.com/images/I/71D8bDU-IVL._AC_SY695_.jpg",
-    },
-    {
-      productId: "2",
-      name: "Puma Shoes",
-      price: 4000,
-      quantity: 2,
-      image: "https://m.media-amazon.com/images/I/71D8bDU-IVL._AC_SY695_.jpg",
-    },
-    {
-      productId: "3",
-      name: "Puma Shoes",
-      price: 4000,
-      quantity: 2,
-      image: "https://m.media-amazon.com/images/I/71D8bDU-IVL._AC_SY695_.jpg",
-    },
-  ];
+  const items = useSelector((state) => state.cart.cartItems);
 
   const spring = useSpring({
     from: { opacity: 0, y: -10 },
     to: {opacity: 1, y: 0 },
     config: { duration: 1000 },
- })   
+ })  ; 
     
+  const dispatch = useDispatch();  
 
   const subTotal = 4000;
   const tax = Math.round(subTotal * 0.18);
@@ -48,8 +33,8 @@ const Cart = () => {
     <animated.div className="cart py-20 px-24 text-black" style={{...spring}}>
 
       <main className="flex flex-col gap-10 w-[80%]">
-        {cart.length > 0 ? (
-          cart.map((item) => <CartItem item={item} />)
+        {items.length > 0 ? (
+          items.map((item) => <CartItem item={item} />)
         ) : (
           <h1 className="text-3xl ">No Items Added</h1>
         )}
@@ -85,7 +70,7 @@ const Cart = () => {
             </span>
           ))}
 
-        {cart.length > 0 && <Link to="/shipping" className="link w-[80%]">Checkout</Link>}
+        {items.length > 0 && <Link to="/shipping" className="link w-[80%]">Checkout</Link>}
       </aside>
     </animated.div>
   );

@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense , useEffect } from "react";
 import "./App.css";
 
 
@@ -30,6 +30,19 @@ const Toss = lazy(() => import("./pages/admin/apps/toss"));
 
 
 function App() {
+
+
+  useEffect(() => {
+   async function getLatestProduct() {
+     const res = await fetch("http://localhost:4000/api/v1/product/latest");
+     const data = await res.json();
+     console.log(data);
+    } 
+
+    getLatestProduct();
+  }, []);
+
+
   return (
     <Router>
       <Navbar />
